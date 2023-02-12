@@ -68,7 +68,7 @@ transform = Transform( 0.595035, -0.632772, 0.495513, 0.433013, 0.771812, 0.4656
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64882, 1.06717 )
 
 [node name="SlopeSteep" type="MeshInstance" parent="."]
-transform = Transform( 2.83192, 0, 0, 0, 0.91657, 0, 0, 0, 1, -0.546198, 0, -1.51606 )
+transform = Transform( 1.61367, 0, 0, 0, 0.566682, 0, 0, 0, 1, -0.318895, 0.449389, -1.51606 )
 mesh = SubResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="SlopeSteep"]
@@ -77,10 +77,11 @@ mesh = SubResource( 3 )
 shape = SubResource( 4 )
 
 [node name="SlopeShallow" type="MeshInstance" parent="."]
-transform = Transform( 4.3273, 0, 0, 0, 0.687296, 0, 0, 0, 1, -0.240484, 0, -1.51606 )
+transform = Transform( 2.34185, 0, 0, 0, 0.33293, 0, 0, 0, 0.99554, 0.167031, 0.349988, -1.51606 )
 mesh = SubResource( 3 )
 
 [node name="StaticBody" type="StaticBody" parent="SlopeShallow"]
 
 [node name="CollisionShape" type="CollisionShape" parent="SlopeShallow/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 5 )
