@@ -83,5 +83,4 @@ mesh = SubResource( 3 )
 [node name="StaticBody" type="StaticBody" parent="SlopeShallow"]
 
 [node name="CollisionShape" type="CollisionShape" parent="SlopeShallow/StaticBody"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 5 )

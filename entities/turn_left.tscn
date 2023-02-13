@@ -1,0 +1,96 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="ConcavePolygonShape" id=2]
+data = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, 1, -1, 0, -1, 1, 0, -1 )
+
+[node name="TurnLeft" type="Spatial"]
+
+[node name="Floor" type="Spatial" parent="."]
+
+[node name="ShortMesh" type="MeshInstance" parent="Floor"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody" type="StaticBody" parent="Floor/ShortMesh"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor/ShortMesh/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="LongMesh" type="MeshInstance" parent="Floor"]
+transform = Transform( 2, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody" type="StaticBody" parent="Floor/LongMesh"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Floor/LongMesh/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Ceiling" type="Spatial" parent="."]
+
+[node name="ShortMesh" type="MeshInstance" parent="Ceiling"]
+transform = Transform( -1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 2, 1 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody" type="StaticBody" parent="Ceiling/ShortMesh"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Ceiling/ShortMesh/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="LongMesh" type="MeshInstance" parent="Ceiling"]
+transform = Transform( -2, 1.50996e-07, 0, -3.01992e-07, -1, 0, 0, 0, 1, -1, 2, -1 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody" type="StaticBody" parent="Ceiling/LongMesh"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Ceiling/LongMesh/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="OuterWall" type="Spatial" parent="."]
+
+[node name="LongMesh1" type="MeshInstance" parent="OuterWall"]
+transform = Transform( 2, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -1, 1, -2 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody" type="StaticBody" parent="OuterWall/LongMesh1"]
+
+[node name="CollisionShape" type="CollisionShape" parent="OuterWall/LongMesh1/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="LongMesh2" type="MeshInstance" parent="OuterWall"]
+transform = Transform( -8.74228e-08, -1, 4.37114e-08, 0, -4.37114e-08, -1, 2, -4.37114e-08, 1.91069e-15, 1, 1, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody" type="StaticBody" parent="OuterWall/LongMesh2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="OuterWall/LongMesh2/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="InnerWall" type="Spatial" parent="."]
+
+[node name="ShortMesh" type="MeshInstance" parent="InnerWall"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -2, 1, 0 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody1" type="StaticBody" parent="InnerWall/ShortMesh"]
+
+[node name="CollisionShape" type="CollisionShape" parent="InnerWall/ShortMesh/StaticBody1"]
+shape = SubResource( 2 )
+
+[node name="ShortMesh2" type="MeshInstance" parent="InnerWall"]
+transform = Transform( -4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -1, 1, 1 )
+mesh = SubResource( 1 )
+skeleton = NodePath("../..")
+
+[node name="StaticBody" type="StaticBody" parent="InnerWall/ShortMesh2"]
+
+[node name="CollisionShape" type="CollisionShape" parent="InnerWall/ShortMesh2/StaticBody"]
+shape = SubResource( 2 )

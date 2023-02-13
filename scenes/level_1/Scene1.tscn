@@ -1,0 +1,19 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/player/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entities/corridor.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entities/t_crossing.tscn" type="PackedScene" id=3]
+[ext_resource path="res://entities/turn_left.tscn" type="PackedScene" id=4]
+
+[node name="Scene1" type="Spatial"]
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.64882, -1 )
+
+[node name="Corridor" parent="." instance=ExtResource( 2 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6 )
+
+[node name="TCrossing" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0 )
+
+[node name="TurnLeft" parent="." instance=ExtResource( 4 )]
